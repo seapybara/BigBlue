@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for BigBlue */
+@layer base {
+  body {
+    @apply bg-light-gray;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ocean-blue text-white px-4 py-2 rounded-lg hover:bg-bright-aqua transition-colors duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-ocean-blue border border-ocean-blue px-4 py-2 rounded-lg hover:bg-light-gray transition-colors duration-200 font-medium;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-bright-aqua focus:border-transparent;
+  }
+}
+
+/* Mapbox overrides */
+.mapboxgl-popup-content {
+  @apply rounded-lg shadow-lg p-0 overflow-hidden;
+}
+
+.mapboxgl-popup-close-button {
+  @apply text-2xl px-2;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  animation: float 3s ease-in-out infinite;
+}
+
+.custom-marker:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Loading animation */
+.wave-loading {
+  display: inline-block;
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+.wave-loading:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.wave-loading:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Make the markers more visible*/
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.custom-marker {
+  animation: pulse 2s infinite;
+}
+
+/* Mapbox marker positioning fix */
+.mapboxgl-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  transition: transform 0.3s ease;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+/* Marker animation */
+@keyframes pulse {
+  0% { 
+    transform: translate(-50%, -50%) scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.1); 
+    opacity: 0.9; 
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(1); 
+    opacity: 1; 
+  }
+}
+
+.custom-marker:hover {
+  animation: pulse 1s infinite;
+  z-index: 10;
+}
+
+/* Marker label styles */
+.marker-label {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mapbox popup styles */
+.mapboxgl-popup {
+  max-width: 300px !important;
+  z-index: 10;
+}
+
+.mapboxgl-popup-content {
+  padding: 0 !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.mapboxgl-popup-close-button {
+  right: 4px;
+  top: 4px;
+  font-size: 18px;
+  padding: 4px;
+  color: #666;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+
+/* Map container ensure proper positioning context */
+.mapboxgl-map {
+  position: relative;
+}
+
+.mapboxgl-canvas-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.mapboxgl-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

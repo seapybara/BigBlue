@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BigBlue/static/css/main.f0e814f7.css",
+    "main.js": "/BigBlue/static/js/main.48f0f66c.js",
+    "index.html": "/BigBlue/index.html",
+    "main.f0e814f7.css.map": "/BigBlue/static/css/main.f0e814f7.css.map",
+    "main.48f0f66c.js.map": "/BigBlue/static/js/main.48f0f66c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0e814f7.css",
+    "static/js/main.48f0f66c.js"
+  ]
+}

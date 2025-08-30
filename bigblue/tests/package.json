@@ -1,0 +1,17 @@
+{
+  "name": "bigblue-tests",
+  "version": "1.0.0",
+  "description": "Test suite for BigBlue API",
+  "main": "test-all.js",
+  "scripts": {
+    "test": "node test-all.js",
+    "test:auth": "node api/auth.test.js",
+    "test:locations": "node api/locations.test.js",
+    "test:buddy": "node api/buddyRequests.test.js",
+    "test:dives": "node api/dives.test.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  }
+}
